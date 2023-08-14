@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- opened the html DOCTYPE-->
+
+<html>
+    <!-- opened the html tag-->
+    <head>
+        {%load static%}
+        <!-- opened the head tag-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <!-- linked the bootstrap link-->
+        <style>
+            /*opened the style tag */
+            img {
+                width:  100px;
+                height: 100px;
+                object-fit: cover;
+                }
+                /*created a style for the images*/
+
+                .responsive:hover {
+                    transform: scale(1.2);
+                  }
+                  /*created a responsive class for the images to react when the user hovers over them */
+
+            body {
+                background-color: #F5F5DC;
+            }
+            /*created a body style to make the background-color a beige colour*/ 
+        </style>
+        <!-- closed the style tag-->
+        <title>Vinyl Store</title>
+        <!-- created a title for my website-->
+    </head>
+    <!-- closed the head tag-->
+
+    <body>
+        <!-- opened the body tag-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>The Vinyl Store</h1>
+                    <h3>Welcome to our all new Vinyl Store</h3>
+                </div>
+            </div>
+        </div>
+        <!-- created a container for the headings of the page using the grid-->
+
+        <br>
+        <!-- created a line break-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <header>ANTI</header>
+                    <img src="{% static 'images/ANTI.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R699</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>DS2</header>
+                    <img src="{% static 'images/DS2.png' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R499</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>House Of Balloons</header>
+                    <img src="{% static 'images/HOB.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R699</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>Rodeo</header>
+                    <img src="{% static 'images/RODEO.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R399</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>I am.. Sasha Fierce</header>
+                    <img src="{% static 'images/SASHA.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R599</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>PARTYNEXTDOOR</header>
+                    <img src="{% static 'images/PARTY.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R299</aside>
+                </div>
+
+            </div>
+            <!-- created a new container with a whole row with 4 different coloumns for each image, calling the responsive class and added
+            a header with the name of the album, the price with the aside tag and added the button for the user to buy -->
+
+            <div class="row">
+                <div class="col-md-2">
+                    <header>Nothing Was The Same</header>
+                    <img src="{% static 'images/NWTS.jpg' %}" class="responsive">
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R899</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>My Beautiful Dark Twisted Fantasy</header>
+                    <img src="{% static 'images/MBDTF.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R799</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>Good Kid, M.A.A.D city </header>
+                    <img src="{% static 'images/GKMC.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R599</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>A.M Paradox</header>
+                    <img src="{% static 'images/AM PARADOX.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R999</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>4:44</header>
+                    <img src="{% static 'images/444.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R1099</aside>
+                </div>
+
+                <div class="col-md-2">
+                    <header>Freudian</header>
+                    <img src="{% static 'images/FREUDIAN.jpg' %}" class="responsive" >
+                    <a href="{%url 'user_info' %}"><button>Buy!</button></a>
+                    <aside>R699</aside>
+                </div>
+
+            </div>
+             <!-- created a new container with a whole row with 4 different coloumns for each image, calling the responsive class and added
+            a header with the name of the album, the price with the aside tag and added the button for the user to buy -->
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <a href="/polls/{{ question.id }}"><button>What's New?</button></a>
+                </div>
+
+                </body>
+                <!-- closed the body tag-->
+                </html>
+                <!-- closed the html tag-->

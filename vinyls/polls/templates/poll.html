@@ -1,0 +1,40 @@
+<style>
+    body {
+      background-color: #F5F5DC;
+    }
+</style>
+<!-- used style to make the background colour of the body of the user html page a colour of my choice-->
+
+{% if recent_question_list %}
+<!-- used an if statement for if the recent_question_list runs-->
+    <ul>
+        <!-- opened up an unordered_list-->
+        {% for question in recent_question_list %}
+
+        <li>
+            <!-- opened up a list element-->
+
+            <a href = "/polls/{{ question.id }}">
+                <!-- used the a href tag to link the polls with the question id-->
+                {{ question.question_text }}
+                <!-- and show the question with the question_text method-->
+            </a>
+            <!-- closed the a tag-->
+
+        </li>
+        <!-- closed a list element-->
+
+        {% endfor %}
+        <!-- ended the for loop-->
+
+    </ul>
+    <!-- closed an unordered_list-->
+
+{% else %}
+<!-- made an else statement-->
+
+    <p>There are currently no polls available.</p>
+    <!-- opened a paragraph tag and inserted an error message-->
+
+{% endif %}
+<!-- ended the if statement-->

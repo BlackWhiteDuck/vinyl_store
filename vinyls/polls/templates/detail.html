@@ -1,0 +1,45 @@
+<style>
+  body {
+    background-color: #F5F5DC;
+  }
+</style>
+<!-- used style to make the background colour of the body of the user html page a colour of my choice-->
+
+<h1> {{question.question_text}} </h1>
+<!-- created a heading for the question using the question_text method-->
+
+  {% if error_message %}
+  <!-- if statement for if the error_message occurs-->
+    <p><strong>{{error_message}}</strong></p>
+    <!-- opened a paragraph and used a strong tag for error_message-->
+  {% endif %}
+  <!-- ended the if statement-->
+
+  <form action="{% url 'polls:vote' question.id %}" method="post">
+    <!-- used the form tag to take action with the url, the string vote and the question id; and made the post the method-->
+    {% csrf_token %}
+    <!-- use the csrf_token-->
+
+    {% for choice in question.choice_set.all %}
+    <!-- for loop for when the choice is in question and used the choice_set and all method-->
+    <input type="radio" name="choice" id="choice {{ forloop.counter }}" value="{{ choice.id }}" />
+    <!-- used the input tag; made the type equal to "radio", made the name equal to "choice", made the id equal to "choice
+    and the forloop.counter" and finally made the value equal to "choice.id"-->
+
+    <label for="choice {{ forloop.counter }}">
+      <!-- used the label tag; made the for equal to "choice and the forloop.counter"-->
+      {{ choice.choice_text }}
+      <!-- showed the choice with the choice_text method-->
+    </label>
+    <!-- closed the label tag-->
+
+    <br />
+    <!-- made a line break-->
+    
+  {% endfor %}
+  <!-- ended the for loop-->
+
+<input type="submit" value="Vote" />
+<!-- used the input tag and made the type equal to "submit" and the value equal to the "Vote"-->
+  </form>
+  <!-- closed the form tag-->

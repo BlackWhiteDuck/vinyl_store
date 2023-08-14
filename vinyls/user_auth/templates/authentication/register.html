@@ -1,0 +1,49 @@
+<style>
+    body {
+      background-color: #F5F5DC;
+    }
+</style>
+<!-- used style to make the background colour of the body of the user html page a colour of my choice-->
+
+<h1> Register </h1>
+<!-- created a heading called 'Register'-->
+
+<form action="{% url 'user_auth:register' %}" method="post">
+    <!-- used the form tag to create a table and used the action tag to direct the user the register function when the submit
+    button is pressed; used the post method-->
+    {% csrf_token %}
+    <!-- used the csrf_token-->
+
+    <label>First Name</label>
+    <!-- created a label for the first name-->
+
+    <input type="text" name="first_name" placeholder="Name" required>
+    <!-- used the input tag to allow the user to input their first name-->
+
+    <br/><br/>
+    <!-- added a line break for neatness-->
+
+    <label>Username</label>
+    <!-- created a label for the username-->
+
+    <input type="text" name="username" placeholder="User" required>
+    <!-- used the input tag to allow the user to input their username-->
+
+    <br/><br/>
+    <!-- added a line break for neatness-->
+
+
+    <label>Password</label>
+    <!-- created a label for the password-->
+
+    <input type="password" name="password" required>
+    <!-- used the input tag to allow the user to input their password-->
+
+    <br/><br/>
+    <!-- added a line break for neatness-->
+
+
+    <input type="submit" value="register" />
+    <!-- used the input tag for the user to submit their information-->
+  </form>
+  <!-- closed the form tag-->

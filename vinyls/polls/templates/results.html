@@ -1,0 +1,34 @@
+<style>
+    body {
+      background-color: #F5F5DC;
+    }
+</style>
+<!-- used style to make the background colour of the body of the user html page a colour of my choice-->
+
+<h1> {{ question.question_text }}</h1>
+<!-- created a heading for the question using the question_text method-->
+
+<ul>
+    <!-- opened up an unordered_list-->
+    {% for choice in question.choice_set.all %}
+    <!-- for loop for when the choice is in question and used the choice_set and all method-->
+        <li>
+            <!-- opened up a list element-->
+            {{ choice.choice_text }} - {{ choice.votes }}
+            <!-- show the choice with the choice_text method and the votes on the choice with the votes method-->
+                votes
+                <!-- made the string after the choice and the votes as just 'votes'-->
+        </li>
+        <!-- closed a list element-->
+
+    {% endfor %}
+    <!-- ended the for loop-->
+</ul>
+<!-- closed an unordered_list-->
+
+<a href="{% url 'polls:detail' question.id %}">
+    <!-- used the a href to link the url 'detail' and the question.id-->
+    Would you like to vote again?
+    <!-- Asked the user if they wish to vote again-->
+</a>
+<!-- closed the a tag-->
