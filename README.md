@@ -16,5 +16,6 @@
 13. Now run the application by typing: "python manage.py runserver" in your command prompt.
 
 ## How to run the application with Docker:
-1. Enter your command prompt and type: "docker build -t vinyl_store ./" in your command prompt.
-2. Now run it by typing: "docker run -p 8000:8000 vinyl_store" in your command prompt.
+1. Please ensure that you have the Docker 3.x prerequisite.
+2. Enter your command prompt and type: "docker build -t vinyl_store ./" in your command prompt.
+3. Now run it by typing: "docker run -p 8000:8000 vinyl_store" in your command prompt.
